@@ -1,6 +1,6 @@
 # GPTP 2025 - GP and LLMs for Program Synthesis: No Clear Winners
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15171303.svg)](https://doi.org/10.5281/zenodo.15171303)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16748866.svg)](https://doi.org/10.5281/zenodo.16748866)
 [![data](https://img.shields.io/badge/go_to-data-9807FF)](https://osf.io/s7vhj/)
 
 ## Abstract
