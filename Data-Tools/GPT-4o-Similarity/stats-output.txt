@@ -1,0 +1,106 @@
+> library(ggplot2)
+> library(cowplot)
+> library(dplyr)
+>
+> # vars needed
+> data_dir <- './psb2_similarity.csv'
+> conditions <- c('PushGP', 'GPT-4o (D)','GPT-4o (D-T)','GPT-4o (T)')
+>
+> all_data <- read.csv(data_dir, header = TRUE, stringsAsFactors = FALSE)
+> all_data$synthesizer <- factor(all_data$synthesizer, levels = conditions)
+> all_data <- filter(all_data, synthesizer != 'PushGP')
+>
+> # 200 cases stats
+> data <- filter(all_data, case == 200)
+>
+> # k_2
+> kruskal.test(k_2 ~ synthesizer, data = data)
+
+	Kruskal-Wallis rank sum test
+
+data:  k_2 by synthesizer
+Kruskal-Wallis chi-squared = 6.6719, df = 2, p-value = 0.03558
+
+> pairwise.wilcox.test(x = data$k_2, g = data$synthesizer, p.adjust.method = "bonferroni",
++                      paired = FALSE, conf.int = FALSE, alternative = 't')
+
+	Pairwise comparisons using Wilcoxon rank sum exact test
+
+data:  data$k_2 and data$synthesizer
+
+             GPT-4o (D) GPT-4o (D-T)
+GPT-4o (D-T) 0.348      -
+GPT-4o (T)   0.043      0.548
+
+P value adjustment method: bonferroni
+>
+> # k_5
+> kruskal.test(k_5 ~ synthesizer, data = data)
+
+	Kruskal-Wallis rank sum test
+
+data:  k_5 by synthesizer
+Kruskal-Wallis chi-squared = 7.9883, df = 2, p-value = 0.01842
+
+> pairwise.wilcox.test(x = data$k_5, g = data$synthesizer, p.adjust.method = "bonferroni",
++                      paired = FALSE, conf.int = FALSE, alternative = 't')
+
+	Pairwise comparisons using Wilcoxon rank sum exact test
+
+data:  data$k_5 and data$synthesizer
+
+             GPT-4o (D) GPT-4o (D-T)
+GPT-4o (D-T) 0.163      -
+GPT-4o (T)   0.032      0.437
+
+P value adjustment method: bonferroni
+>
+> # k_10
+> kruskal.test(k_10 ~ synthesizer, data = data)
+
+	Kruskal-Wallis rank sum test
+
+data:  k_10 by synthesizer
+Kruskal-Wallis chi-squared = 9.132, df = 2, p-value = 0.0104
+
+> pairwise.wilcox.test(x = data$k_10, g = data$synthesizer, p.adjust.method = "bonferroni",
++                      paired = FALSE, conf.int = FALSE, alternative = 't')
+
+	Pairwise comparisons using Wilcoxon rank sum exact test
+
+data:  data$k_10 and data$synthesizer
+
+             GPT-4o (D) GPT-4o (D-T)
+GPT-4o (D-T) 0.15       -
+GPT-4o (T)   0.02       0.24
+
+P value adjustment method: bonferroni
+>
+> # 50 cases stats
+> data <- filter(all_data, case == 50)
+>
+> # k_2
+> kruskal.test(k_2 ~ synthesizer, data = data)
+
+	Kruskal-Wallis rank sum test
+
+data:  k_2 by synthesizer
+Kruskal-Wallis chi-squared = 5.5085, df = 2, p-value = 0.06366
+
+>
+> # k_5
+> kruskal.test(k_5 ~ synthesizer, data = data)
+
+	Kruskal-Wallis rank sum test
+
+data:  k_5 by synthesizer
+Kruskal-Wallis chi-squared = 5.4984, df = 2, p-value = 0.06398
+
+>
+> # k_10
+> kruskal.test(k_10 ~ synthesizer, data = data)
+
+	Kruskal-Wallis rank sum test
+
+data:  k_10 by synthesizer
+Kruskal-Wallis chi-squared = 5.306, df = 2, p-value = 0.07044
