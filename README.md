@@ -23,5 +23,5 @@ Datasets used in the experiments. The `Task ID' refers to the identifier used to
   - `GPT-4o-Similarity/`: all scripts related to analyzing data for the similarity results
   - `Paper-Results/`: scripts for the results found within the paper
 - `GPT-4o-Source/`: all scripts related to generating results for GPT-4o
-  - For questions regarding this folder, please contact Gabriel Ketron at gabrielketron@gmail.com
+  - For questions regarding this folder, please contact [Gabriel Ketron][https://www.linkedin.com/in/gabriel-ketron/] at gabrielketron@gmail.com
 - `PushGP-Source/`: all scripts related to generating results for PushGP
