@@ -17,8 +17,6 @@ With there being no dominant program synthesizer, this work highlights the impor
 
 ## Repository guide
 
-Datasets used in the experiments. The `Task ID' refers to the identifier used to extract the dataset from OpenML. The other columns denote the number of rows, columns, and classes for each dataset.
-
 - `Data-Tools/`: all scripts related to data checking, collecting, and visualizing
   - `GPT-4o-Similarity/`: all scripts related to analyzing data for the similarity results
   - `Paper-Results/`: scripts for the results found within the paper
